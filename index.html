@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortalCivic | Excellence Communautaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><i class="fas fa-city"></i> PORTAL<span>CIVIC</span></div>
+    <nav id="nav-logged-in" class="hidden">
+        <a onclick="showSection('home-section')">Accueil</a>
+        <a onclick="showSection('report-section')">Signaler</a>
+        <a onclick="showSection('profile-section')">Profil</a>
+        <a id="logout-btn" class="logout"><i class="fas fa-power-off"></i></a>
+    </nav>
+    <nav id="nav-guest">
+        <a href="auth.html" class="btn-login-nav"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+    </nav>
+</header>
+
+<div class="container">
+    
+    <section id="home-section" class="section-content active">
+        <div class="hero-section">
+            <h1>Bienvenue sur le Portail</h1>
+            <p>Améliorons ensemble notre environnement local en un clic.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-map-pin"></i></div>
+                <div class="card-body">
+                    <h3>Signalement</h3>
+                    <p>Un problème de voirie ou d'éclairage ? Dites-le nous.</p>
+                </div>
+                <button class="btn-primary" onclick="showSection('report-section')">Nouveau Signalement</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-users"></i></div>
+                <div class="card-body">
+                    <h3>Forum & Idées</h3>
+                    <p>Échangez avec les citoyens sur les futurs projets.</p>
+                </div>
+                <button class="btn-outline">Accéder au Forum</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="card-body">
+                    <h3>Annonces</h3>
+                    <div id="announcements-list" class="mini-list"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-microphone"></i></div>
+                <div class="card-body">
+                    <h3>Podcast Hebdo</h3>
+                    <audio controls><source src="media/update.mp3"></audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-clock"></i> Signalements Récents</h2>
+                <ul id="recent-issues-list" class="styled-list"></ul>
+            </div>
+            <div class="glass-panel">
+                <h2><i class="fas fa-layer-group"></i> Groupes Populaires</h2>
+                <ul id="popular-groups-list" class="styled-list"></ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/populate-localStorage.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
