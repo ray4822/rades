@@ -1,0 +1,321 @@
+/* --- UI/UX LUXURY MINIMALIST BY RAYEN --- */
+
+:root {
+    --primary: #6366f1;         /* Indigo Modern */
+    --primary-glow: rgba(99, 102, 241, 0.5);
+    --accent: #a855f7;          /* Purple Accent */
+    --bg-dark: #0b0f1a;         /* Deep Dark Blue */
+    --card-bg: rgba(30, 41, 59, 0.4); /* Glassmorphism */
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --radius-lg: 28px;
+    --radius-md: 14px;
+}
+
+body {
+    background: radial-gradient(circle at top right, #1a164d, #0b0f1a);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- NAVIGATION & HEADER --- */
+header {
+    background: rgba(11, 15, 26, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 1.2rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+header nav a:hover {
+    color: var(--primary);
+}
+
+/* Luxury Connexion Button in Nav */
+.btn-login-nav {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+    padding: 10px 24px !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-login-nav:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px var(--primary-glow);
+    transform: translateY(-2px);
+}
+
+/* --- MAIN CONTAINER & HERO --- */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.hero-section h1 {
+    font-size: 4.2rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -2px;
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* --- THE GRID (FIXED SPACING) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px; /* Eba3ed el cards 3la b3adh'hom */
+    margin-bottom: 60px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+/* --- BUTTONS --- */
+.btn-primary, button[type="submit"] {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px var(--primary-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+/* --- BOTTOM SECTIONS --- */
+.full-width-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.glass-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+}
+
+.glass-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- UTILS --- */
+.hidden { display: none; }
+
+.logout { 
+    color: #ef4444 !important; 
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Audio Player Skin */
+audio {
+    width: 100%;
+    height: 35px;
+    filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .full-width-section { grid-template-columns: 1fr; }
+    .hero-section h1 { font-size: 2.8rem; }
+}
+
+
+/* --- RESPONSIVE DESIGN (MOBILE & TABLET) --- */
+
+@media (max-width: 768px) {
+    /* 1. Header & Nav */
+    header {
+        padding: 1rem 5%;
+    }
+    
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    header nav a:not(.btn-login-nav):not(.logout) {
+        display: none; /* Makhbiw el links el zayda fel mobile bech ma dakhalech b3adh'ha */
+    }
+
+    /* 2. Hero Section */
+    .hero-section {
+        margin-bottom: 50px;
+        padding: 0 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem; /* Titre asgher bech iji 3la sater wa7ed */
+        letter-spacing: -1px;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    /* 3. The Grid - IMPORTANT FIX */
+    .card-grid {
+        grid-template-columns: 1fr; /* Card wa7da fi kol sater */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .card {
+        padding: 30px 20px;
+        min-height: auto; /* Na7iw el min-height bech ma tjich tlowa barcha */
+    }
+
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    /* 4. Bottom Sections */
+    .full-width-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .glass-panel {
+        padding: 25px;
+    }
+
+    /* 5. Buttons Mobile */
+    .btn-primary, .btn-outline {
+        width: 100%; /* El buttons iwalliw kbar b-toul el card */
+        padding: 15px;
+    }
+}
+
+/* Fix sghir lel ecrans el sghar barcha (iPhone SE...) */
+@media (max-width: 400px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .auth-card {
+        padding: 30px 20px;
+        margin: 15px;
+    }
+}

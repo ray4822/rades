@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentification | PortalCivic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1e1b4b, #0b0f1a);
+        }
+
+        .auth-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle { color: #94a3b8; margin-bottom: 30px; font-size: 0.9rem; }
+
+        .input-group { margin-bottom: 18px; text-align: left; }
+        
+        label { display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; margin-left: 5px; }
+
+        input {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus { border-color: #6366f1; background: rgba(255,255,255,0.05); }
+
+        .toggle-text {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .toggle-text span {
+            color: #6366f1;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .hidden { display: none; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <div id="login-box">
+            <h2>Connexion</h2>
+            <p class="subtitle">Heureux de vous revoir !</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" id="login-user" placeholder="Ex: Rayen123" required>
+                </div>
+                <div class="input-group">
+                    <label>Mot de passe</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Se connecter</button>
+            </form>
+            <p class="toggle-text">Pas encore de compte ? <span onclick="toggleAuth()">Créer un compte</span></p>
+        </div>
+
+        <div id="signup-box" class="hidden">
+            <h2>Inscription</h2>
+            <p class="subtitle">Rejoignez la communauté PortalCivic</p>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" id="sign-user" placeholder="Ex: Rayen_TN" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="sign-email" placeholder="email@exemple.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Mot de passe</label>
+                    <input type="password" id="sign-pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Créer mon compte</button>
+            </form>
+            <p class="toggle-text">Déjà inscrit ? <span onclick="toggleAuth()">Se connecter</span></p>
+        </div>
+    </div>
+
+    <script src="js/populate-localStorage.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Fonction bech n-switchiw bin login w signup d'une façon smooth
+        function toggleAuth() {
+            const loginBox = document.getElementById('login-box');
+            const signupBox = document.getElementById('signup-box');
+            
+            loginBox.classList.toggle('hidden');
+            signupBox.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
